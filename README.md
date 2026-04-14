@@ -198,38 +198,6 @@ pip install torch torchvision scikit-learn xgboost pandas numpy matplotlib seabo
 
 ---
 
-## 📂 Project Structure
-
-```
-KVASIR/
-├── kvasir_classification_meta_learners_finetune.py   # Main pipeline (Colab export)
-├── research_final_ppt.pptx                           # Research presentation
-└── README.md                                         # This file
-```
-
-### Pipeline Sections (in order of execution)
-
-| Section | Lines | Description |
-|---|---|---|
-| Data Loading & Splitting | 1–70 | Mount Drive, unzip data, create train/val/test splits |
-| Dataset & DataLoader Setup | 72–119 | Custom PyTorch `Dataset`, augmentations, `DataLoader` creation |
-| Model Definition Helper | 121–182 | `get_model()` factory with architecture-specific classifier replacement |
-| ResNet-50 Fine-Tuning | 184–356 | Two-stage training for ResNet-50 |
-| VGG-16 Fine-Tuning | 357–510 | Two-stage training for VGG-16 |
-| MobileNetV2 Fine-Tuning | 511–665 | Two-stage training for MobileNetV2 |
-| DenseNet-121 Fine-Tuning | 666–814 | Two-stage training for DenseNet-121 |
-| EfficientNet-B6 Fine-Tuning | 815–963 | Two-stage training for EfficientNet-B6 |
-| Soft Voting Ensemble | 964–1032 | Average-probability ensemble baseline |
-| Meta-Feature Generation | 1034–1108 | Generate stacking features from base model predictions |
-| Logistic Regression Meta | 1110–1142 | Stacking with Logistic Regression |
-| SVM Meta-Learner | 1144–1172 | Stacking with Linear SVM |
-| KNN Meta-Learner | 1174–1202 | Stacking with K-Nearest Neighbors |
-| MLP Meta-Learner | 1204–1242 | Stacking with scaled MLP |
-| XGBoost Meta-Learner | 1244–1281 | Stacking with XGBoost |
-| Weighted Ensemble | 1283–1388 | Accuracy-weighted ensemble voting |
-
----
-
 ## 📊 Results
 
 Each method produces a full **classification report** (precision, recall, F1-score per class) and a **confusion matrix** heatmap.
